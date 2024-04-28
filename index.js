@@ -9,6 +9,13 @@ import route from "./routes/postRoute.js";
 app.use(bodyParser.json());
 dotenv.config();
 
+// Allow all origins
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 const PORT = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGO_URL;
 
